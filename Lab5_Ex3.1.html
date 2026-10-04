@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#0c2738">
+	<meta name="description" content="Trang giới thiệu thông tin cá nhân và các sản phẩm học tập của Tăng Tuấn Khiêm.">
+	<title>Giới thiệu bản thân | Tăng Tuấn Khiêm</title>
+	<style>
+		:root {
+			color-scheme: light;
+			--ink: #183447;
+			--muted: #64798a;
+			--accent: #087f8c;
+			--accent-dark: #07636e;
+			--line: #dfe9ed;
+			--surface: #fff;
+			--page: #f2f7f8;
+		}
+		* { box-sizing: border-box; }
+		html { scroll-behavior: smooth; }
+		body {
+			margin: 0;
+			padding: 36px 18px;
+			background: var(--page);
+			color: var(--ink);
+			font-family: Arial, sans-serif;
+			line-height: 1.65;
+		}
+		main { max-width: 1000px; margin: auto; }
+		.profile, .product {
+			background: var(--surface);
+			border: 1px solid var(--line);
+			border-radius: 18px;
+			box-shadow: 0 12px 34px #1834470d;
+		}
+		.profile { padding: clamp(24px, 6vw, 56px); }
+		.eyebrow {
+			margin: 0 0 8px;
+			color: var(--accent);
+			font-size: .78rem;
+			font-weight: 700;
+			letter-spacing: .14em;
+			text-transform: uppercase;
+		}
+		h1 { margin: 0; font-size: clamp(2rem, 6vw, 3.25rem); line-height: 1.15; }
+		.intro { max-width: 680px; margin: 14px 0 0; color: var(--muted); font-size: 1.08rem; }
+		.details {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 14px;
+			margin: 32px 0 0;
+		}
+		.detail {
+			padding: 16px 18px;
+			border: 1px solid var(--line);
+			border-radius: 12px;
+			background: #f9fbfc;
+		}
+		.detail dt { color: var(--muted); font-size: .82rem; }
+		.detail dd { margin: 4px 0 0; font-weight: 700; }
+		.section-heading { margin: 38px 0 16px; }
+		.section-heading h2 { margin: 0; font-size: clamp(1.35rem, 4vw, 1.7rem); }
+		.section-heading p { margin: 5px 0 0; color: var(--muted); }
+		.products { display: grid; gap: 20px; }
+		.product { min-width: 0; padding: clamp(18px, 4vw, 28px); }
+		.product h3 { margin: 0 0 14px; font-size: 1.12rem; }
+		.pdf-viewer {
+			display: block;
+			width: 100%;
+			height: min(72vh, 720px);
+			min-height: 420px;
+			border: 1px solid var(--line);
+			border-radius: 10px;
+			background: #f5f8fa;
+		}
+		.pdf-fallback {
+			display: grid;
+			min-height: 180px;
+			place-content: center;
+			padding: 20px;
+			color: var(--muted);
+			text-align: center;
+		}
+		.pdf-fallback p { margin: 0 0 10px; }
+		a { color: var(--accent-dark); font-weight: 700; }
+		.infographic {
+			display: block;
+			width: 100%;
+			height: auto;
+			border: 1px solid var(--line);
+			border-radius: 10px;
+		}
+		.video {
+			position: relative;
+			width: 100%;
+			aspect-ratio: 16 / 9;
+			overflow: hidden;
+			border-radius: 10px;
+			background: #172c3d;
+		}
+		.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+		footer { padding: 24px 12px 4px; color: var(--muted); font-size: .9rem; text-align: center; }
+		@media (max-width: 680px) {
+			body { padding: 18px 12px; }
+			.details { grid-template-columns: 1fr; }
+			.pdf-viewer { min-height: 360px; }
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<header class="profile">
+			<p class="eyebrow">Hồ sơ cá nhân</p>
+			<h1>Tăng Tuấn Khiêm</h1>
+			<p class="intro">Xin chào! Tôi là sinh viên ngành Công nghệ phần mềm tại Trường Công nghệ Thông tin và Truyền thông. Đây là trang giới thiệu bản thân và một số sản phẩm học tập của tôi.</p>
+			<dl class="details">
+				<div class="detail">
+					<dt>Mã số sinh viên</dt>
+					<dd>B2604648</dd>
+				</div>
+				<div class="detail">
+					<dt>Trường</dt>
+					<dd>Công nghệ Thông tin và Truyền thông</dd>
+				</div>
+				<div class="detail">
+					<dt>Ngành học</dt>
+					<dd>Công nghệ phần mềm</dd>
+				</div>
+			</dl>
+		</header>
+
+		<section aria-labelledby="products-heading">
+			<div class="section-heading">
+				<p class="eyebrow">Bài thực hành Lab 05</p>
+				<h2 id="products-heading">Sản phẩm học tập</h2>
+				<p>Một số tài liệu và nội dung đa phương tiện trong bài thực hành.</p>
+			</div>
+
+			<div class="products">
+				<section class="product" aria-labelledby="pdf-heading">
+					<h3 id="pdf-heading">Tài liệu PDF – Lab 05, Bài 1.1</h3>
+					<object class="pdf-viewer" data="Lab05_Ex1.1.pdf" type="application/pdf" aria-label="Tài liệu PDF Lab 05, Bài 1.1">
+						<div class="pdf-fallback">
+							<p>Nếu PDF không hiển thị trong trình duyệt, bạn có thể mở hoặc tải tài liệu bằng liên kết bên dưới.</p>
+							<a href="Lab05_Ex1.1.pdf">Mở hoặc tải Lab05_Ex1.1.pdf</a>
+						</div>
+					</object>
+				</section>
+
+				<section class="product" aria-labelledby="infographic-heading">
+					<h3 id="infographic-heading">Infographic bài tập</h3>
+					<img class="infographic" src="Lab05_Ex2.1.png" alt="Infographic Lab 05, bài tập Nhiệm vụ 2.2">
+				</section>
+
+				<section class="product" aria-labelledby="video-heading">
+					<h3 id="video-heading">Video YouTube – Nhiệm vụ 2.2</h3>
+					<div class="video">
+						<iframe src="https://www.youtube.com/embed/3nFaO9fk1x8?rel=0&modestbranding=1"
+							title="Video YouTube cho Nhiệm vụ 2.2"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerpolicy="strict-origin-when-cross-origin"
+							allowfullscreen>
+						</iframe>
+					</div>
+				</section>
+			</div>
+		</section>
+
+		<footer>© 2026 Tăng Tuấn Khiêm · Bài thực hành Lab 05</footer>
+	</main>
+</body>
+</html>
